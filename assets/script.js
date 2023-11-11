@@ -30,5 +30,9 @@ clickRight.addEventListener("click", () => {
 	console.log("click right")
 });
 
-/* Ajout bullet points */
+/* Ajout bullet point selected */
 
+let dotOnSlide = document.querySelectorAll(".dot");
+dotOnSlide[0].classList.add("dot_selected")
+
+/* */
