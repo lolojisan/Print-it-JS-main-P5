@@ -1,42 +1,71 @@
 const slides = [
 	{
-		"image":"slide1.jpg",
+		"image":"./assets/images/slideshow/slide1.jpg",
 		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
 	},
 	{
-		"image":"slide2.jpg",
+		"image":"./assets/images/slideshow/slide2.jpg",
 		"tagLine":"Tirages haute définition grand format <span>pour vos bureaux et events</span>"
 	},
 	{
-		"image":"slide3.jpg",
+		"image":"./assets/images/slideshow/slide3.jpg",
 		"tagLine":"Grand choix de couleurs <span>de CMJN aux pantones</span>"
 	},
 	{
-		"image":"slide4.png",
+		"image":"./assets/images/slideshow/slide4.png",
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
 
 
-/* Event Listener sur aroww left et arrow right */
-
+/* variables */
+let i = 0;
 const clickLeft = document.querySelector(".arrow_left");
 const clickRight = document.querySelector(".arrow_right");
+const dotBox = document.querySelector(".dots");
+const img = document.querySelector(".banner-img");
+const txt = document.querySelector("p");
 
+
+/* Event Listener sur aroww left et arrow right */
 clickLeft.addEventListener("click", () => {
-	console.log("click left")
+	console.log("click left");
+	i--;
+	if (i === -1) {
+	  i = slides.length - 1;
+	}
+	img.src = slides[i].image;
+	txt.innerHTML = slides[i].tagLine;
+	
 });
 
 clickRight.addEventListener("click", () => {
-	console.log("click right")
+	console.log("click right");
+	i++;
+	if (i === slides.length) {
+	  i = 0;
+	}
+	img.src = slides[i].image;
+	txt.innerHTML = slides[i].tagLine;
+	
 });
+
+/*Ajoutez bullet points*/
+
+ for (let bp = 0; bp < slides.length; bp++) {
+	const dot = document.createElement("div");
+	dot.classList.add("dot");
+	dotBox.appendChild(dot);
+  }
+
+const dotOnSlide = document.querySelectorAll(".dot");
 
 /* Ajout bullet point selected first slide */
 
-const dotOnSlide = document.querySelectorAll(".dot");
 dotOnSlide[0].classList.add("dot_selected")
 
 /* On click change bulletpoint - img - txt */
+
 
 
 
