@@ -16,23 +16,28 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+
+
 /* Event Listener sur aroww left et arrow right */
 
-let clickLeft = document.querySelector(".arrow_left");
+const clickLeft = document.querySelector(".arrow_left");
+const clickRight = document.querySelector(".arrow_right");
 
 clickLeft.addEventListener("click", () => {
 	console.log("click left")
 });
 
-let clickRight = document.querySelector(".arrow_right");
-
 clickRight.addEventListener("click", () => {
 	console.log("click right")
 });
 
-/* Ajout bullet point selected */
+/* Ajout bullet point selected first slide */
 
-let dotOnSlide = document.querySelectorAll(".dot");
+const dotOnSlide = document.querySelectorAll(".dot");
 dotOnSlide[0].classList.add("dot_selected")
 
-/* */
+/* On click change bulletpoint - img - txt */
+
+
+
+
