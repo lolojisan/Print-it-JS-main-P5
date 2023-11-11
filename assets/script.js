@@ -27,7 +27,9 @@ const img = document.querySelector(".banner-img");
 const txt = document.querySelector("p");
 
 
-/* Event Listener sur aroww left et arrow right */
+/* Event Listener sur aroww left et arrow right 
++ Ajout changement image + tagline */
+
 clickLeft.addEventListener("click", () => {
 	console.log("click left");
 	i--;
@@ -36,7 +38,6 @@ clickLeft.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
-	
 });
 
 clickRight.addEventListener("click", () => {
@@ -47,7 +48,6 @@ clickRight.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
-	
 });
 
 /*Ajoutez bullet points*/
