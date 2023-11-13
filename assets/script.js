@@ -29,6 +29,7 @@ const txt = document.querySelector("p");
 
 /* Event Listener sur aroww left et arrow right 
 + Ajout changement image + tagline */
+/*  i-- pour left | i++ pour right // ajouter [i] pour target la cellule du tableau en cours */
 
 clickLeft.addEventListener("click", () => {
 	console.log("click left");
@@ -53,7 +54,7 @@ clickRight.addEventListener("click", () => {
 });
 
 /*Ajoutez bullet points*/
-
+/* for (let * = 0; * < longueur tableau; *++) pour ajouter un nombre de boutons(*) de la taille du tableau */
  for (let bp = 0; bp < slides.length; bp++) {
 	const dot = document.createElement("div");
 	dot.classList.add("dot");
