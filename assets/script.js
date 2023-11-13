@@ -38,6 +38,7 @@ clickLeft.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
+	dynamicBullets(i)
 });
 
 clickRight.addEventListener("click", () => {
@@ -48,6 +49,7 @@ clickRight.addEventListener("click", () => {
 	}
 	img.src = slides[i].image;
 	txt.innerHTML = slides[i].tagLine;
+	dynamicBullets(i)
 });
 
 /*Ajoutez bullet points*/
@@ -58,13 +60,21 @@ clickRight.addEventListener("click", () => {
 	dotBox.appendChild(dot);
   }
 
-const dotOnSlide = document.querySelectorAll(".dot");
-
 /* Ajout bullet point selected first slide */
 
+const dotOnSlide = document.querySelectorAll(".dot");
 dotOnSlide[0].classList.add("dot_selected")
 
-/* On click change bulletpoint - img - txt */
+// Fonction pour mettre à jour les bullets dynamiquement
+function dynamicBullets(count) {
+	dotOnSlide.forEach((dot, index) => {
+	  if (index === count) {
+		dot.classList.add("dot_selected");
+	  } else {
+		dot.classList.remove("dot_selected");
+	  }
+	});
+  }
 
 
 
